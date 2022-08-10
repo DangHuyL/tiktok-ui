@@ -11,3 +11,4 @@ git push
 Hoặc có thể dùng giao diện
 bấm dấu cộng nớ tương ứng với bước 1
 nhập message ở ô đó và bấm commit tương ứng với bước 2
+bấm sync changes tương ứng với bước 3
