@@ -1,0 +1,13 @@
+để push lên github
+
+- sử dụng câu lệnh
+git add .
+--> thêm tất cả các file đang trong thư mục hiện tại vào staged 
+- Commit những file đã được staged
+git commit -m "nội dung commit"
+- Push commit lên github
+git push
+
+Hoặc có thể dùng giao diện
+bấm dấu cộng nớ tương ứng với bước 1
+nhập message ở ô đó và bấm commit tương ứng với bước 2
