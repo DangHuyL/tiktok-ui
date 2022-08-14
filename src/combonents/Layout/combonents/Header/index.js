@@ -5,8 +5,10 @@ import {
     faCircleXmark,
     faSpinner,
     faMagnifyingGlass,
+    faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 
+import Button from '~/combonents/Button';
 import Tippy from '@tippyjs/react/headless';
 import style from './Header.module.scss';
 import images from '~/assets/images';
@@ -63,7 +65,15 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    <Button
+                        angular
+                        leftIcon={<FontAwesomeIcon icon={faPlus} />}
+                    >
+                        Up load
+                    </Button>
+                    <Button primary>Log in</Button>
+                </div>
             </div>
         </header>
     );
