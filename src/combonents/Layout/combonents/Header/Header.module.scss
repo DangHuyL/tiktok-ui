@@ -103,10 +103,32 @@
 }
 
 .actions-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
     font-size: 2.2rem;
     color: #161823;
     background-color: transparent;
-    padding: 4px 12px;
+    padding: 4px 10px;
+}
+
+.action-icon {
+    margin-left: 6px;
+}
+
+.bagde {
+    position: absolute;
+    right: 0px;
+    top: -3px;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    color: var(--white);
+    font-family: var(--font-family);
+    font-weight: 600;
+    background-color: var(--primary);
+    padding: 0px 6px;
+    height: 2rem;
+    line-height: 2rem;
 }
 
 .more-btn {
@@ -121,6 +143,6 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    margin-left: 12px;
+    margin-left: 16px;
     cursor: pointer;
 }

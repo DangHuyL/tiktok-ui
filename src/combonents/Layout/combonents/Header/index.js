@@ -10,7 +10,6 @@ import {
     faEarthAsia,
     faCircleQuestion,
     faKeyboard,
-    faCloudUpload,
     faUser,
     faCoins,
     faGear,
@@ -27,6 +26,8 @@ import { Wrapper as PopperWrapper } from '~/combonents/Popper';
 import AccountItem from '~/combonents/AccountItem';
 import Menu from '~/combonents/Popper/Menu';
 import MenuItem from '~/combonents/Popper/Menu/MenuItem';
+import { InboxIcon, MessageIcon } from '~/combonents/Icon';
+import Image from '~/combonents/Image';
 const MENU_ITEM = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
@@ -142,13 +143,31 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
+                            <Button
+                                angular
+                                leftIcon={<FontAwesomeIcon icon={faPlus} />}
+                            >
+                                Up load
+                            </Button>
                             <Tippy
-                                content="upload video"
+                                content="Messages"
                                 placement="bottom"
                                 delay={[0, 200]}
                             >
                                 <button className={cx('actions-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <MessageIcon
+                                        className={cx('action-icon')}
+                                    />
+                                </button>
+                            </Tippy>
+                            <Tippy
+                                content="Inbox"
+                                placement="bottom"
+                                delay={[0, 200]}
+                            >
+                                <button className={cx('actions-btn')}>
+                                    <InboxIcon />
+                                    <span className={cx('bagde')}>12</span>
                                 </button>
                             </Tippy>
                         </>
@@ -168,10 +187,11 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/b4f45ab45c999aac225a7322dc33237f~c5_100x100.jpeg?x-expires=1661047200&x-signature=AbR%2B5lUGwC27trsTT2iOqmmE7tc%3D"
                                 className={cx('user-avatar')}
                                 alt="Dao thi kim lien"
+                                fallback="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                             />
                         ) : (
                             <>
