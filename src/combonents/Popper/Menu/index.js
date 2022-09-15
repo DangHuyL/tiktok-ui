@@ -7,7 +7,13 @@ import Header from './Header';
 import { useState } from 'react';
 
 const cx = classNames.bind(style);
-function Menu({ children, items = [], onChange }) {
+function Menu({
+    children,
+    items = [],
+    onChange,
+    hideOnClick = false,
+    ...passProps
+}) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
     const renderItems = () => {
@@ -30,10 +36,12 @@ function Menu({ children, items = [], onChange }) {
     };
     return (
         <Tippy
+            {...passProps}
             interactive
             delay={[0, 700]}
             offset={[12, 8]}
             placement="bottom-end"
+            hideOnClick={hideOnClick}
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
@@ -47,7 +55,7 @@ function Menu({ children, items = [], onChange }) {
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}

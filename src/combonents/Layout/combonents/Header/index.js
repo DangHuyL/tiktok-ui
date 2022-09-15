@@ -11,15 +11,19 @@ import {
     faGear,
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
-import Button from '~/combonents/Button';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
+
+import routes from '~/config/routes';
+import Button from '~/combonents/Button';
 import style from './Header.module.scss';
 import images from '~/assets/images';
 import Menu from '~/combonents/Popper/Menu';
 import { InboxIcon, MessageIcon } from '~/combonents/Icon';
 import Image from '~/combonents/Image';
 import Search from '../Search';
+
 const MENU_ITEM = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
@@ -85,7 +89,10 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="tiktok" />
+                <Link to={routes.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="tiktok" />
+                </Link>
+
                 <Search />
 
                 <div className={cx('actions')}>
