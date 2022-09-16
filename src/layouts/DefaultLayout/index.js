@@ -1,4 +1,5 @@
-import Header from '~/combonents/Layout/combonents/Header';
+import PropTypes from 'prop-types';
+import Header from '~/layouts/combonents/Header';
 import classNames from 'classnames/bind';
 import style from './DefaultLayout.module.scss';
 import Sidebar from './Sidebar';
@@ -16,5 +17,9 @@ function DefaultLayout({ children }) {
         </div>
     );
 }
+
+DefaultLayout.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default DefaultLayout;
