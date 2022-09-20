@@ -57,10 +57,11 @@ const MENU_ITEM = [
 const cx = classNames.bind(style);
 
 function Header() {
+    const currentUser = false;
     const handleMenuChange = (menuItem) => {
         console.log(menuItem);
     };
-    const currentUser = true;
+
     const userMenu = [
         {
             icon: <FontAwesomeIcon icon={faUser} />,
@@ -94,7 +95,6 @@ function Header() {
                 </Link>
 
                 <Search />
-
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
