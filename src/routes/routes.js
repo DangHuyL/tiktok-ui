@@ -7,6 +7,7 @@ import Following from '~/Page/Following';
 import Profile from '~/Page/Profile';
 import Upload from '~/Page/Upload';
 import Search from '~/Page/Search';
+import Live from '~/Page/Live';
 
 const puplicRoutes = [
     { path: config.routes.home, component: Home },
@@ -14,6 +15,7 @@ const puplicRoutes = [
     { path: config.routes.profile, component: Profile },
     { path: config.routes.upload, component: Upload, layout: HeaderOnly },
     { path: config.routes.search, component: Search, layout: null },
+    { path: config.routes.live, component: Live },
 ];
 
 const privateRoutes = [];
